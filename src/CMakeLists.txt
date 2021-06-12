@@ -1,3 +1,7 @@
 target_sources(${APP_TARGET} PRIVATE
-main.cpp
+Main.cpp
+Field.cpp
+Field.h
+Cell.cpp
+Cell.h
 )
