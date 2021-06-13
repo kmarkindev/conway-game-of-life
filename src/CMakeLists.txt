@@ -5,6 +5,16 @@ Field.h
 Cell.cpp
 Cell.h
 Field.h
+Window.cpp
+Window.h
+Renderer/RenderAPI.cpp
+Renderer/RenderAPI.h
+Renderer/VertexArray.cpp
+Renderer/VertexArray.h
+Renderer/VertexBuffer.cpp
+Renderer/VertexBuffer.h
+Renderer/Shader.cpp
+Renderer/Shader.h
 Rules/IRule.h
 Rules/KillLessThanTwo.h
 Rules/KillLessThanTwo.cpp

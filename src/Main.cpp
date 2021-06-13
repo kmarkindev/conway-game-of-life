@@ -1,58 +1,78 @@
-#include <glad/glad.h>
-#include <GLFW/glfw3.h>
-
-#include <imgui.h>
-#include <backends/imgui_impl_glfw.h>
-#include <backends/imgui_impl_opengl3.h>
-
 #include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
+
+#include "Renderer/RenderAPI.h"
+#include "Window.h"
+#include "Renderer/VertexBuffer.h"
+#include "Renderer/VertexArray.h"
+#include "Renderer/Shader.h"
+
+std::string vertextSrc = R"(
+#version 330 core
+
+layout (location = 0) in vec2 Vert;
+
+uniform mat4 matrix;
+
+void main()
+{
+    gl_Position = matrix * vec4(Vert.x, Vert.y, 0, 1);
+}
+)";
+
+std::string fragmentSrc = R"(
+#version 330 core
+
+out vec4 Color;
+
+void main()
+{
+    Color = vec4(1, 1, 1, 1);
+}
+)";
 
 int main()
 {
-    GLFWwindow* window;
+    auto window = Window();
+    auto renderApi = RenderAPI();
 
-    if (!glfwInit())
-        return -1;
+    renderApi.SetViewport({0, 0, 800, 800});
 
-    window = glfwCreateWindow(640, 480, "Hello There", nullptr, nullptr);
-    if (!window)
+    renderApi.SetClearColor({0.04f,0.00f,0.11f});
+
+    auto shader = Shader(vertextSrc, fragmentSrc);
+    auto vertexBuffer = VertexBuffer();
+    auto vertexArray = VertexArray();
+
+    vertexArray.AssignVertexBuffer(vertexBuffer);
+
+    while(!window.GetShouldClose())
     {
-        glfwTerminate();
-        return -1;
+        window.PollEvents();
+
+        renderApi.ClearColor();
+
+        shader.UseProgram();
+
+        auto proj = glm::ortho(-10.5f, 10.5f, 10.5f, -10.5f, 0.0f, 1.0f);
+
+        for(auto pos : {
+            glm::vec3({0, 0, 0}),
+            glm::vec3({1, 0, 0}),
+            glm::vec3({3, 2, 0}),
+            glm::vec3({1, -3, 0}),
+            glm::vec3({7, 3, 0}),
+            glm::vec3({-10, 10, 0})
+        })
+        {
+            auto transform = proj * glm::translate(glm::mat4(1.0f), pos);
+            shader.SetMat4("matrix", transform);
+
+            vertexArray.Bind();
+            renderApi.DrawArrays();
+            vertexArray.Unbind();
+        }
+
+        window.SwapBuffers();
     }
-
-    glfwMakeContextCurrent(window);
-
-    gladLoadGL();
-
-    glViewport(0, 0, 640, 480);
-
-    ImGui::CreateContext();
-    ImGuiIO& io = ImGui::GetIO();
-    ImGui::StyleColorsDark();
-
-    ImGui_ImplGlfw_InitForOpenGL(window, true);
-    ImGui_ImplOpenGL3_Init("#version 330 core");
-
-    auto* clear_color = new float[3]{0.4, 0.3, 0.3};
-    bool showDemoWindow = true;
-    while (!glfwWindowShouldClose(window))
-    {
-        ImGui_ImplOpenGL3_NewFrame();
-        ImGui_ImplGlfw_NewFrame();
-        ImGui::NewFrame();
-
-        ImGui::ShowDemoWindow(&showDemoWindow);
-
-        glClearColor(clear_color[0], clear_color[1], clear_color[2], 1.0);
-        glClear(GL_COLOR_BUFFER_BIT);
-
-        ImGui::Render();
-        ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
-
-        glfwSwapBuffers(window);
-        glfwPollEvents();
-    }
-
-    glfwTerminate();
 }
