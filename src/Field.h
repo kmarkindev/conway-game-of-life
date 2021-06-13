@@ -14,6 +14,8 @@ public:
     bool HasActiveCell(glm::ivec2 position);
     void KillCell(glm::ivec2 position);
     void SpawnCell(glm::ivec2 position);
+    std::vector<Cell>::const_iterator Begin();
+    std::vector<Cell>::const_iterator End();
 
 private:
     glm::ivec2 _size;

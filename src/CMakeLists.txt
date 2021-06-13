@@ -4,4 +4,17 @@ Field.cpp
 Field.h
 Cell.cpp
 Cell.h
+Field.h
+Rules/IRule.h
+Rules/KillLessThanTwo.h
+Rules/KillLessThanTwo.cpp
+Rules/KillMoreThanThree.cpp
+Rules/KillMoreThanThree.h
+Rules/SpawnWithThree.h
+Rules/SpawnWithThree.cpp
+Commands/ICommand.h
+Commands/KillCommand.h
+Commands/KillCommand.cpp
+Commands/SpawnCommand.cpp
+Commands/SpawnCommand.h
 )
