@@ -1,6 +1,6 @@
 #include "Cell.h"
 
-Cell::Cell(Field& field, glm::ivec2 position)
+Cell::Cell(Field* field, glm::ivec2 position)
     : _position(position), _field(field)
 {
 
@@ -26,7 +26,7 @@ int Cell::GetNeighborsCount()
 
     for(auto neighborPos : GetNeighbors())
     {
-        if(_field.HasActiveCell(neighborPos))
+        if(_field->HasActiveCell(neighborPos))
             neighborCount++;
     }
 

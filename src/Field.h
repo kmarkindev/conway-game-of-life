@@ -6,6 +6,8 @@
 
 #include "Cell.h"
 
+class Cell;
+
 class Field
 {
 public:

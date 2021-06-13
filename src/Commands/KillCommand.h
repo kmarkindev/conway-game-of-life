@@ -5,7 +5,7 @@
 #include "ICommand.h"
 #include "../Field.h"
 
-class KillCommand : ICommand
+class KillCommand : public ICommand
 {
 public:
     explicit KillCommand(glm::ivec2 position);

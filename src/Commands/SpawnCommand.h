@@ -5,7 +5,7 @@
 #include "ICommand.h"
 #include "../Field.h"
 
-class SpawnCommand : ICommand
+class SpawnCommand : public ICommand
 {
 public:
     explicit SpawnCommand(glm::ivec2 position);

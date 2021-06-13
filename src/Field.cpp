@@ -33,7 +33,7 @@ void Field::SpawnCell(glm::ivec2 position)
 {
     if(!HasActiveCell(position))
     {
-        _active_cells.emplace_back(position);
+        _active_cells.emplace_back(Cell(this, position));
     }
 }
 

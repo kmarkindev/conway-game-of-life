@@ -34,7 +34,7 @@ int main()
     ImGui_ImplGlfw_InitForOpenGL(window, true);
     ImGui_ImplOpenGL3_Init("#version 330 core");
 
-    auto* clear_color = new float[]{0.4, 0.3, 0.3};
+    auto* clear_color = new float[3]{0.4, 0.3, 0.3};
     bool showDemoWindow = true;
     while (!glfwWindowShouldClose(window))
     {
