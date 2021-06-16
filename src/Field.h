@@ -2,6 +2,7 @@
 
 #include <vector>
 #include <glm/glm.hpp>
+#include <stdexcept>
 #include <algorithm>
 
 #include "Cell.h"
@@ -11,19 +12,25 @@ class Cell;
 class Field
 {
 public:
-    explicit Field(glm::ivec2 size);
+    explicit Field(glm::ivec4 fieldSize);
 
     bool HasActiveCell(glm::ivec2 position);
     void KillCell(glm::ivec2 position);
     void SpawnCell(glm::ivec2 position);
-    std::vector<Cell>::const_iterator Begin();
-    std::vector<Cell>::const_iterator End();
+    void Clear();
+
+    glm::ivec4 GetFieldSize();
+    bool HasPosition(glm::ivec2 position);
+
+    std::vector<Cell>::iterator Begin();
+    std::vector<Cell>::iterator End();
 
 private:
-    glm::ivec2 _size;
+    glm::ivec4 _size;
     std::vector<Cell> _active_cells;
 
     auto FindCell(glm::ivec2 position);
+    bool CorrectFieldSize(glm::ivec4 size);
 };
 
 
