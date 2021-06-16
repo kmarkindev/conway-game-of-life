@@ -17,8 +17,32 @@ void Shader::SetMat4(std::string name, glm::mat4 value)
     glUniformMatrix4fv(loc, 1, GL_FALSE, &value[0][0]);
 }
 
-Shader::Shader(std::string vertexShaderSrc, std::string fragmentShaderSrc)
+Shader::Shader()
 {
+    std::string vertexShaderSrc = R"(
+    #version 330 core
+
+    layout (location = 0) in vec2 Vert;
+
+    uniform mat4 matrix;
+
+    void main()
+    {
+        gl_Position = matrix * vec4(Vert.x, Vert.y, 0, 1);
+    }
+    )";
+
+    std::string fragmentShaderSrc = R"(
+    #version 330 core
+
+    out vec4 Color;
+
+    void main()
+    {
+        Color = vec4(1, 1, 1, 1);
+    }
+    )";
+
     auto vertexShader = glCreateShader(GL_VERTEX_SHADER);
     auto fragmentShader = glCreateShader(GL_FRAGMENT_SHADER);
 

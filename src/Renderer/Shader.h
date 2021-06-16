@@ -7,7 +7,7 @@
 class Shader
 {
 public:
-    Shader(std::string vertexShaderSrc, std::string fragmentShaderSrc);
+    Shader();
     ~Shader();
     void UseProgram();
     void SetMat4(std::string name, glm::mat4 value);
