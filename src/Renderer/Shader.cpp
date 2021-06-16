@@ -24,11 +24,11 @@ Shader::Shader()
 
     layout (location = 0) in vec2 Vert;
 
-    uniform mat4 matrix;
+    uniform mat4 transformation;
 
     void main()
     {
-        gl_Position = matrix * vec4(Vert.x, Vert.y, 0, 1);
+        gl_Position = transformation * vec4(Vert.x, Vert.y, 0, 1);
     }
     )";
 
