@@ -17,6 +17,9 @@ float Camera::GetZoom()
 
 void Camera::SetZoom(float zoom)
 {
+    if(zoom <= 0)
+        throw std::invalid_argument("Zoom cannot be equal or less than 0");
+
     _zoom = zoom;
 }
 
