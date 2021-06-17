@@ -21,6 +21,10 @@ public:
 
     glm::ivec4 GetFieldSize();
     bool HasPosition(glm::ivec2 position);
+    glm::ivec2 GetPosition(glm::ivec2 position);
+
+    bool GetNoBounds();
+    void SetNoBounds(bool value);
 
     std::vector<Cell>::iterator Begin();
     std::vector<Cell>::iterator End();
@@ -28,6 +32,7 @@ public:
 private:
     glm::ivec4 _size;
     std::vector<Cell> _active_cells;
+    bool _noBound;
 
     auto FindCell(glm::ivec2 position);
     bool CorrectFieldSize(glm::ivec4 size);

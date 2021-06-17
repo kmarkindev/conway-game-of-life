@@ -71,3 +71,41 @@ void Field::Clear()
 {
     _active_cells.empty();
 }
+
+glm::ivec2 Field::GetPosition(glm::ivec2 position)
+{
+    if(!_noBound)
+        return position;
+
+    if(position == glm::ivec2({0, 0}))
+        return position;
+
+    auto fieldSize = GetFieldSize();
+
+    int fieldXSize = glm::abs(fieldSize.x - fieldSize.z);
+    int fieldYSize = glm::abs(fieldSize.w - fieldSize.y);
+
+    while(position.x < fieldSize.x)
+        position.x += fieldXSize;
+
+    while(position.y < fieldSize.w)
+        position.y += fieldYSize;
+
+    while(position.x > fieldSize.z)
+        position.x -= fieldXSize;
+
+    while(position.y > fieldSize.y)
+        position.y -= fieldYSize;
+
+    return position;
+}
+
+bool Field::GetNoBounds()
+{
+    return _noBound;
+}
+
+void Field::SetNoBounds(bool value)
+{
+    _noBound = value;
+}
