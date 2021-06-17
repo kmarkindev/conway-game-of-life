@@ -17,6 +17,8 @@ public:
     void PollEvents();
     void SetShouldClose();
     bool GetShouldClose();
+
+    GLFWwindow* GetGlfwWindow();
 private:
     GLFWwindow* _window;
     GLFWmonitor* _primaryMonitor;

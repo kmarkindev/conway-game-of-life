@@ -79,5 +79,11 @@ bool Window::GetShouldClose()
 
 Window::~Window()
 {
+    glfwDestroyWindow(_window);
     glfwTerminate();
+}
+
+GLFWwindow* Window::GetGlfwWindow()
+{
+    return _window;
 }
