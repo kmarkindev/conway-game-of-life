@@ -69,7 +69,7 @@ bool Field::CorrectFieldSize(glm::ivec4 size)
 
 void Field::Clear()
 {
-    _active_cells.empty();
+    _active_cells.clear();
 }
 
 glm::ivec2 Field::GetPosition(glm::ivec2 position)
