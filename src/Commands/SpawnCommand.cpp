@@ -2,7 +2,8 @@
 
 void SpawnCommand::ApplyTo(Field& field)
 {
-    field.SpawnCell(_position);
+    auto positionToSpawn = field.GetPosition(_position);
+    field.SpawnCell(positionToSpawn);
 }
 
 SpawnCommand::SpawnCommand(glm::ivec2 position)
