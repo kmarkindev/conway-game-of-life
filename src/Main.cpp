@@ -22,6 +22,7 @@
 int main()
 {
     auto window = Window();
+    window.SetTitle("Game of Life");
     auto renderApi = RenderAPI();
     auto time = Time();
     auto random = Random();
