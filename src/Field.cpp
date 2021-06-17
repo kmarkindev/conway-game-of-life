@@ -1,7 +1,7 @@
 #include "Field.h"
 
 Field::Field(glm::ivec4 fieldSize)
-    : _size(fieldSize)
+    : _size(fieldSize), _noBound(false)
 {
     if(!CorrectFieldSize(fieldSize))
         throw std::invalid_argument("Invalid field size params");
