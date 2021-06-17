@@ -59,13 +59,13 @@ int main()
 
             std::vector<std::shared_ptr<ICommand>> commands;
 
-            for(auto rule : rules)
+            for(auto& rule : rules)
             {
                 auto newCommands = rule->ApplyTo(field);
                 commands.insert(commands.end(), newCommands.begin(), newCommands.end());
             }
 
-            for(auto command : commands)
+            for(auto& command : commands)
             {
                 command->ApplyTo(field);
             }
