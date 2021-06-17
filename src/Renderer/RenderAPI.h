@@ -14,6 +14,8 @@ public:
     void SetClearColor(glm::vec3 color);
     void DrawArrays();
     void ClearColor();
+
+    std::string GetOpenGlVersion();
 };
 
 

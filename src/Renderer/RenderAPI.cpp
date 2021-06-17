@@ -27,3 +27,8 @@ void RenderAPI::DrawArrays()
     //it means there always be 6 vertices
     glDrawArrays(GL_TRIANGLES, 0, 6);
 }
+
+std::string RenderAPI::GetOpenGlVersion()
+{
+    return "#version 330 core";
+}
