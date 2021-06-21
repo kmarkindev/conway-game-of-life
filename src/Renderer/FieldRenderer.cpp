@@ -7,7 +7,7 @@ FieldRenderer::FieldRenderer(RenderAPI* renderApi, Camera* camera)
     _vertexArray.AssignVertexBuffer(_vertexBuffer);
 }
 
-void FieldRenderer::Render(Field& field)
+void FieldRenderer::Render(const Field& field)
 {
     auto proj = _camera->GetProjectionMatrix();
 

@@ -1,11 +1,11 @@
 #include "VertexArray.h"
 
-void VertexArray::Unbind()
+void VertexArray::Unbind() const
 {
     glBindVertexArray(0);
 }
 
-void VertexArray::Bind()
+void VertexArray::Bind() const
 {
     glBindVertexArray(_id);
 }

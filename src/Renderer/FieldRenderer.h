@@ -11,7 +11,7 @@ class FieldRenderer
 {
 public:
     explicit FieldRenderer(RenderAPI* renderApi, Camera* camera);
-    void Render(Field& field);
+    void Render(const Field& field);
 private:
     RenderAPI* _renderApi;
     Camera* _camera;

@@ -1,6 +1,6 @@
 #include "Camera.h"
 
-glm::ivec2 Camera::GetPosition()
+glm::ivec2 Camera::GetPosition() const
 {
     return _position;
 }
@@ -10,7 +10,7 @@ void Camera::SetPosition(const glm::ivec2& position)
     _position = position;
 }
 
-float Camera::GetZoom()
+float Camera::GetZoom() const
 {
     return _zoom;
 }
@@ -28,7 +28,7 @@ Camera::Camera()
 {
 }
 
-glm::mat4 Camera::GetProjectionMatrix()
+glm::mat4 Camera::GetProjectionMatrix() const
 {
     return glm::ortho(-_zoom, _zoom,
                       _zoom, -_zoom,

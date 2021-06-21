@@ -10,8 +10,8 @@ public:
     VertexArray();
     ~VertexArray();
     void AssignVertexBuffer(VertexBuffer vertexBuffer);
-    void Bind();
-    void Unbind();
+    void Bind() const;
+    void Unbind() const;
 private:
     GLuint _id;
 };

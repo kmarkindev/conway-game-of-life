@@ -9,11 +9,11 @@ class Camera
 public:
     Camera();
 
-    glm::ivec2 GetPosition();
+    [[nodiscard]] glm::ivec2 GetPosition() const;
     void SetPosition(const glm::ivec2& position);
-    float GetZoom();
+    [[nodiscard]] float GetZoom() const;
     void SetZoom(float zoom);
-    glm::mat4 GetProjectionMatrix();
+    [[nodiscard]] glm::mat4 GetProjectionMatrix() const;
 
 private:
     glm::ivec2 _position;
