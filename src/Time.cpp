@@ -1,6 +1,6 @@
 #include "Time.h"
 
-float Time::GetDeltaTime()
+float Time::GetDeltaTime() const
 {
     return _currentDeltaTime;
 }

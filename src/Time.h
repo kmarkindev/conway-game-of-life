@@ -6,7 +6,7 @@ class Time
 {
 public:
     Time();
-    float GetDeltaTime();
+    [[nodiscard]] float GetDeltaTime() const;
     void UpdateDeltaTime();
     void ResetDeltaTime();
 private:
