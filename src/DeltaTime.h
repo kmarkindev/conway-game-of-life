@@ -2,10 +2,10 @@
 
 #include <glfw/glfw3.h>
 
-class Time
+class DeltaTime
 {
 public:
-    Time();
+    DeltaTime();
     [[nodiscard]] float GetDeltaTime() const;
     void UpdateDeltaTime();
     void ResetDeltaTime();

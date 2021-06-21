@@ -1,23 +1,23 @@
-#include "Time.h"
+#include "DeltaTime.h"
 
-float Time::GetDeltaTime() const
+float DeltaTime::GetDeltaTime() const
 {
     return _currentDeltaTime;
 }
 
-void Time::UpdateDeltaTime()
+void DeltaTime::UpdateDeltaTime()
 {
     auto currentTime = (float)glfwGetTime();
     _currentDeltaTime = currentTime - _lastDeltaTimeRecordedAt;
     _lastDeltaTimeRecordedAt = currentTime;
 }
 
-Time::Time()
+DeltaTime::DeltaTime()
 {
     ResetDeltaTime();
 }
 
-void Time::ResetDeltaTime()
+void DeltaTime::ResetDeltaTime()
 {
     _lastDeltaTimeRecordedAt = 0.0f;
     _currentDeltaTime = 0.0f;

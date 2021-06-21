@@ -15,11 +15,6 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 include(config)
 
-add_executable(${APP_TARGET})
-
-set_target_properties(${APP_TARGET} PROPERTIES
-    OUTPUT_NAME ${APP_NAME}
-)
-
-add_subdirectory(src)
 add_subdirectory(3rdparty)
+add_subdirectory(src)
+add_subdirectory(tests)

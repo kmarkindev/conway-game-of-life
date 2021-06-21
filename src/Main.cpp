@@ -7,7 +7,7 @@
 #include "Renderer/RenderAPI.h"
 #include "Renderer/FieldRenderer.h"
 #include "Renderer/Camera.h"
-#include "Time.h"
+#include "DeltaTime.h"
 #include "Random.h"
 #include "Field.h"
 #include "FieldSeeder.h"
@@ -24,7 +24,7 @@ int main()
     auto window = Window();
     window.SetTitle("Game of Life");
     auto renderApi = RenderAPI();
-    auto time = Time();
+    auto time = DeltaTime();
     auto random = Random();
     random.SetSeed(7788);
     auto fieldSeeder = FieldSeeder(random);

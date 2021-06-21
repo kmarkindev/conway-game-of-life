@@ -119,3 +119,8 @@ void Field::SetNoBounds(bool value)
 {
     _noBound = value;
 }
+
+int Field::GetActiveCellsCount() const
+{
+    return _active_cells.size();
+}

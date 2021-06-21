@@ -13,4 +13,6 @@ add_subdirectory(glm)
 
 include(import-imgui)
 
-target_link_libraries(${APP_TARGET} PRIVATE glad glfw glm::glm imgui)
+set(INSTALL_GTEST OFF)
+cmake_policy(SET CMP0077 NEW)
+add_subdirectory(googletest)

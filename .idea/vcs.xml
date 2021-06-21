@@ -4,6 +4,7 @@
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/3rdparty/glfw" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/3rdparty/glm" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/3rdparty/googletest" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/3rdparty/imgui" vcs="Git" />
   </component>
 </project>

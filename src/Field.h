@@ -22,6 +22,7 @@ public:
     [[nodiscard]] glm::ivec4 GetFieldSize() const;
     [[nodiscard]] bool HasPosition(glm::ivec2 position) const;
     [[nodiscard]] glm::ivec2 GetPosition(glm::ivec2 position) const;
+    [[nodiscard]] int GetActiveCellsCount() const;
 
     [[nodiscard]] bool GetNoBounds() const;
     void SetNoBounds(bool value);
