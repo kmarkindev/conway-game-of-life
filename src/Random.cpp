@@ -1,6 +1,6 @@
 #include "Random.h"
 
-float Random::GetFloat01()
+float Random::GetFloat01() const
 {
     return (float)_distrib01(_generator);
 }

@@ -7,7 +7,7 @@ class Random
 public:
     explicit Random();
     void SetSeed(unsigned int seed);
-    float GetFloat01();
+    [[nodiscard]] float GetFloat01() const;
 
 private:
     std::mt19937 _generator;
