@@ -47,6 +47,7 @@ glm::ivec2 Cell::GetPosition() const
 
 Cell& Cell::operator=(const Cell& cell)
 {
-    Cell newCell = Cell(cell);
+    _position = cell._position;
+    _field = cell._field;
     return *this;
 }
