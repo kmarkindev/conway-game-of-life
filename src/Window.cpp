@@ -48,7 +48,7 @@ void Window::SetFullScreen(bool enable)
     }
 }
 
-bool Window::IsFullScreen()
+bool Window::IsFullScreen() const
 {
     return glfwGetWindowMonitor(_window) != nullptr;
 }
@@ -73,7 +73,7 @@ void Window::SetShouldClose()
     glfwSetWindowShouldClose(_window, GLFW_TRUE);
 }
 
-bool Window::GetShouldClose()
+bool Window::GetShouldClose() const
 {
     return glfwWindowShouldClose(_window) == GLFW_TRUE;
 }
@@ -84,7 +84,7 @@ Window::~Window()
     glfwTerminate();
 }
 
-GLFWwindow* Window::GetGlfwWindow()
+GLFWwindow* Window::GetGlfwWindow() const
 {
     return _window;
 }

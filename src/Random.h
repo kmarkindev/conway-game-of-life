@@ -10,7 +10,7 @@ public:
     [[nodiscard]] float GetFloat01() const;
 
 private:
-    std::mt19937 _generator;
+    mutable std::mt19937 _generator;
     std::uniform_real_distribution<float> _distrib01;
 };
 

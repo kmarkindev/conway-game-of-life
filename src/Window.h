@@ -11,14 +11,14 @@ public:
     ~Window();
     void SetSize(glm::ivec2 size);
     void SetFullScreen(bool enable);
-    bool IsFullScreen();
+    [[nodiscard]] bool IsFullScreen() const;
     void SetTitle(const std::string& title);
     void SwapBuffers();
     void PollEvents();
     void SetShouldClose();
-    bool GetShouldClose();
+    [[nodiscard]] bool GetShouldClose() const;
 
-    GLFWwindow* GetGlfwWindow();
+    [[nodiscard]] GLFWwindow* GetGlfwWindow() const;
 private:
     GLFWwindow* _window;
     GLFWmonitor* _primaryMonitor;
