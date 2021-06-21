@@ -14,16 +14,16 @@ class Field
 public:
     explicit Field(glm::ivec4 fieldSize);
 
-    bool HasActiveCell(glm::ivec2 position);
+    [[nodiscard]] bool HasActiveCell(glm::ivec2 position) const;
     void KillCell(glm::ivec2 position);
     void SpawnCell(glm::ivec2 position);
     void Clear();
 
-    glm::ivec4 GetFieldSize();
-    bool HasPosition(glm::ivec2 position);
-    glm::ivec2 GetPosition(glm::ivec2 position);
+    [[nodiscard]] glm::ivec4 GetFieldSize() const;
+    [[nodiscard]] bool HasPosition(glm::ivec2 position) const;
+    [[nodiscard]] glm::ivec2 GetPosition(glm::ivec2 position) const;
 
-    bool GetNoBounds();
+    [[nodiscard]] bool GetNoBounds() const;
     void SetNoBounds(bool value);
 
     std::vector<Cell>::iterator Begin();
@@ -34,8 +34,8 @@ private:
     std::vector<Cell> _active_cells;
     bool _noBound;
 
-    auto FindCell(glm::ivec2 position);
-    bool CorrectFieldSize(glm::ivec4 size);
+    [[nodiscard]] auto FindCell(glm::ivec2 position) const;
+    [[nodiscard]] bool CorrectFieldSize(glm::ivec4 size) const;
 };
 
 
