@@ -1,6 +1,6 @@
 #include "Cell.h"
 
-Cell::Cell(Field* field, glm::ivec2 position)
+Cell::Cell(Field& field, glm::ivec2 position)
     : _position(position), _field(field)
 {
 
@@ -21,7 +21,7 @@ std::vector<glm::ivec2> Cell::GetNeighbors() const
 
     for(auto& pos : positions)
     {
-        pos = _field->GetPosition(pos);
+        pos = _field.GetPosition(pos);
     }
 
     return positions;
@@ -33,7 +33,7 @@ int Cell::GetNeighborsCount() const
 
     for(auto neighborPos : GetNeighbors())
     {
-        if(_field->HasActiveCell(neighborPos))
+        if(_field.HasActiveCell(neighborPos))
             neighborCount++;
     }
 
@@ -43,4 +43,10 @@ int Cell::GetNeighborsCount() const
 glm::ivec2 Cell::GetPosition() const
 {
     return _position;
+}
+
+Cell& Cell::operator=(const Cell& cell)
+{
+    Cell newCell = Cell(cell);
+    return *this;
 }

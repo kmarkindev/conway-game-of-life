@@ -37,7 +37,7 @@ void Field::SpawnCell(glm::ivec2 position)
                 "Cannot spawn cell on this position because field does not have such position.");
 
     if(!HasActiveCell(position))
-        _active_cells.push_back(Cell(this, position));
+        _active_cells.push_back(Cell(*this, position));
 }
 
 std::vector<Cell>::iterator Field::Begin()
