@@ -6,7 +6,7 @@ Cell::Cell(Field* field, glm::ivec2 position)
 
 }
 
-std::vector<glm::ivec2> Cell::GetNeighbors()
+std::vector<glm::ivec2> Cell::GetNeighbors() const
 {
     auto positions = std::vector<glm::ivec2>{
         _position + glm::ivec2(-1, 0),
@@ -27,7 +27,7 @@ std::vector<glm::ivec2> Cell::GetNeighbors()
     return positions;
 }
 
-int Cell::GetNeighborsCount()
+int Cell::GetNeighborsCount() const
 {
     int neighborCount = 0;
 
@@ -40,7 +40,7 @@ int Cell::GetNeighborsCount()
     return neighborCount;
 }
 
-glm::ivec2 Cell::GetPosition()
+glm::ivec2 Cell::GetPosition() const
 {
     return _position;
 }

@@ -11,9 +11,9 @@ class Cell
 {
 public:
     explicit Cell(Field* field, glm::ivec2 position);
-    std::vector<glm::ivec2> GetNeighbors();
-    int GetNeighborsCount();
-    glm::ivec2 GetPosition();
+    [[nodiscard]] std::vector<glm::ivec2> GetNeighbors() const;
+    [[nodiscard]] int GetNeighborsCount() const;
+    [[nodiscard]] glm::ivec2 GetPosition() const;
 private:
     glm::ivec2 _position;
     Field* _field;
