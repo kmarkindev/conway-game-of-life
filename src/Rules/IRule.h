@@ -9,5 +9,5 @@
 class IRule
 {
 public:
-    virtual std::vector<std::shared_ptr<ICommand>> ApplyTo(Field& field) = 0;
+    virtual std::vector<std::shared_ptr<ICommand>> ApplyTo(const Field& field) = 0;
 };

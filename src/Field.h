@@ -26,8 +26,11 @@ public:
     [[nodiscard]] bool GetNoBounds() const;
     void SetNoBounds(bool value);
 
-    std::vector<Cell>::iterator Begin();
-    std::vector<Cell>::iterator End();
+    [[nodiscard]] std::vector<Cell>::iterator Begin();
+    [[nodiscard]] std::vector<Cell>::iterator End();
+
+    [[nodiscard]] std::vector<Cell>::const_iterator Begin() const;
+    [[nodiscard]] std::vector<Cell>::const_iterator End() const;
 
 private:
     glm::ivec4 _size;

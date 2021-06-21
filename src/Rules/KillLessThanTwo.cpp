@@ -1,6 +1,6 @@
 #include "KillLessThanTwo.h"
 
-std::vector<std::shared_ptr<ICommand>> KillLessThanTwo::ApplyTo(Field& field)
+std::vector<std::shared_ptr<ICommand>> KillLessThanTwo::ApplyTo(const Field& field)
 {
     auto commands = std::vector<std::shared_ptr<ICommand>>();
 

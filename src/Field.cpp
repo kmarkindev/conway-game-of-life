@@ -50,6 +50,16 @@ std::vector<Cell>::iterator Field::End()
     return _active_cells.end();
 }
 
+std::vector<Cell>::const_iterator Field::Begin() const
+{
+    return _active_cells.begin();
+}
+
+std::vector<Cell>::const_iterator Field::End() const
+{
+    return _active_cells.end();
+}
+
 glm::ivec4 Field::GetFieldSize() const
 {
     return _size;

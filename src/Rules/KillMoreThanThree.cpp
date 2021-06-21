@@ -1,6 +1,6 @@
 #include "KillMoreThanThree.h"
 
-std::vector<std::shared_ptr<ICommand>> KillMoreThanThree::ApplyTo(Field& field)
+std::vector<std::shared_ptr<ICommand>> KillMoreThanThree::ApplyTo(const Field& field)
 {
     auto commands = std::vector<std::shared_ptr<ICommand>>();
 

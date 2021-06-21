@@ -1,6 +1,6 @@
 #include "SpawnWithThree.h"
 
-std::vector<std::shared_ptr<ICommand>> SpawnWithThree::ApplyTo(Field& field)
+std::vector<std::shared_ptr<ICommand>> SpawnWithThree::ApplyTo(const Field& field)
 {
     auto commands = std::vector<std::shared_ptr<ICommand>>();
 

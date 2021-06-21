@@ -5,7 +5,7 @@
 
 class KillMoreThanThree : public IRule
 {
-    std::vector<std::shared_ptr<ICommand>> ApplyTo(Field& field) override;
+    std::vector<std::shared_ptr<ICommand>> ApplyTo(const Field& field) override;
 };
 
 
