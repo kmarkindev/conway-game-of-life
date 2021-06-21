@@ -1,5 +1,8 @@
-# Conway Game Of Life
+# Conway's Game Of Life
   The "Game of Life", also known simply as "Life". Devised by John Horton Conway back in 1970.
+  
+  Here is the screenshot of what I have done: <br/>
+  <img src="https://raw.githubusercontent.com/Lackym/conway-game-of-life/master/game-of-life.png" alt="drawing" width="450"/>
 
 # Rules
 
